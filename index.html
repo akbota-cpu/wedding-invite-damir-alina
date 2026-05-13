@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Приглашение</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body> 
+
+
+
+<!-- Картинки друг за другом -->
+<section class="gallery">
+
+    <div class="first-image">
+        <img src="images/img1.png" alt="">
+    </div>
+    
+    <img src="images/img2.png" alt="">
+    <img src="images/img3.png" alt="">
+    <img src="images/img4.png" alt="">
+    <img src="images/img5.png" alt="">
+    
+    <!-- ТАЙМЕР -->
+
+    
+
+    <div class="timer-wrapper">
+    <div class="timer-section">
+
+    
+        <div class="countdown-container">
+
+    <div class="countdown-item">
+        <span id="days" class="number">00</span>
+        <span class="label">күн</span>
+    </div>
+
+    <div class="colon">:</div>
+
+    <div class="countdown-item">
+        <span id="hours" class="number">00</span>
+        <span class="label">сағат</span>
+    </div>
+
+    <div class="colon">:</div>
+
+    <div class="countdown-item">
+        <span id="minutes" class="number">00</span>
+        <span class="label">минут</span>
+    </div>
+
+    <div class="colon">:</div>
+
+    <div class="countdown-item">
+        <span id="seconds" class="number">00</span>
+        <span class="label">секунд</span>
+    </div>
+
+</div>
+
+    </div>
+
+</div>
+
+
+<a href="https://2gis.kz/astana/geo/9570784863374841">
+    <img src="images/img6.png" style="width: 100%;">
+</a>
+
+    
+ 
+    <img src="images/img7.png" alt="">
+
+
+
+<section class="rsvp-section">
+
+    <form id="rsvp-form" class="rsvp-form">
+        <div class="rsvp-form-content">
+
+    <!-- Вопрос 1 -->
+    
+
+
+
+        <div class="radio-group" required>
+            <p style="color: #000000;">Келесіз бе?</p>
+            <input type="radio" id="question1_yes" name="answer" value="Иә барамын" required>
+            <label for="question1_yes" style="color: #000000;">Иә барамын</label>
+            <br>
+            <input type="radio" id="question1_with" name="answer" value="Жұбайыммен барамын" required>
+            <label for="question1_with" style="color: #000000;">Жұбайыммен барамын</label>
+            <br>
+            <input type="radio" id="question1_no" name="answer" value="Бара алмаймын" required>
+            <label for="question1_no" style="color: #000000;">Бара алмаймын</label>
+        </div>
+        <br>
+        <!-- Вопрос 2 -->
+        <div class="radio-group" required>
+        <p style="color:#000000;">Неше адам болып келесіздер?</p>
+         <div style="display: flex;align-items: center;gap: 14px;">
+            <button type="button" id="decrease" style="font-size: 15px; border-radius: 50px; color: black;">-</button>
+            <span id="peopleCount" style="font-size: 20px; margin: 20px; display: inline-block; text-align: center; color: black;">1</span>
+            <button type="button" id="increase" style="font-size: 15px; border-radius: 50px; color: black;">+</button>
+         </div> 
+         <!--Нақты мәнді сақтау үшін жасырын инпут-->
+         <input type="hidden" name="count" id="choice" value="1">
+    </div>
+    <br>
+    <textarea required name="name" maxlength="100" id="message" cols="30" rows="4" placeholder="Есіміңізді жазыңыз"></textarea>
+    <input type="submit" value="Жіберу" style="color: white;" class="btn">
+
+
+    </div>
+</form>
+
+<div id="success-message" style="display:none; text-align:center; padding:40px;">
+    <h2>Жауабыңызға рахмет! 💚</h2>
+</div>
+
+</section>
+
+
+
+    <img src="images/img8.png" alt="">
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+
+
+
+

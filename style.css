@@ -1,0 +1,216 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    background-image: url('images/bg.png');
+    background-size: cover;       /* растягивает красиво */
+    background-position: center;  /* центрирует */
+    background-repeat: no-repeat; /* без повторов */
+    background-attachment: fixed; /* фиксированный фон (эффект “параллакса”) */
+}
+
+/* Фон */
+.first-image {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Размытый bg.png под картинкой */
+.first-image::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: url('images/bg.png') center/cover no-repeat;
+
+    filter: blur(25px);
+    transform: scale(1.1); /* чтобы не было обрезанных краёв */
+
+    opacity: 0.7; /* мягкость */
+    z-index: 0;
+}
+
+/* сама картинка */
+.first-image img {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    display: block;
+}
+
+/* Картинки */
+.gallery img {
+    width: 100%;
+    display: block;
+}
+
+
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 13px;
+}
+
+/* блок */
+.countdown-item {
+    text-align: center;
+}
+
+/* ЦИФРЫ (как у них) */
+.number {
+    display: block;
+    font-size: 96px;
+    font-weight: 300;
+    color: #3F3F3F;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+
+    padding: 5px; /* как в DevTools */
+}
+
+/* подписи */
+.label {
+    font-size: 38px;
+    color: #000000;
+    margin-top: 5px;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* двоеточия */
+.colon {
+    font-size: 48px;
+    color: #3F3F3F;
+    margin: 0 4px;
+}
+
+
+.colon {
+    transform: translateY(-2px);
+}
+
+
+.timer-wrapper {
+    position: relative;
+
+    background: url('images/bg-section.png') center/cover no-repeat;
+    height: 400px; /* задай высоту */
+}
+
+/* центрируем таймер */
+.timer-section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+    width: 100%;
+}
+
+/* секция как обычный блок */
+.rsvp-section {
+    width: 100%;
+    padding: 50px 20px;
+    background: transparent; /* НЕТ ФОНА */
+}
+
+/* форма */
+.rsvp-form {
+    width: 100%;
+    max-width: 100%; /* убираем ограничение */
+    padding: 40px 20px;
+
+
+    /* убираем карточку */
+    background: none;
+    border-radius: 0;
+    backdrop-filter: none;
+    box-shadow: none;
+}
+
+/* текст аккуратный */
+.rsvp-form p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* кнопка */
+.btn {
+    width: 100%;
+    padding: 14px;
+    background: #3f5f1f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+}
+
+.rsvp-form {
+    width: 100%;
+    padding: 60px 20px;
+}
+
+/* ограничиваем только внутренний контент */
+.rsvp-form-content {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* заголовки */
+.rsvp-form p {
+    font-size: 20px;
+}
+
+/* радио */
+.rsvp-form label {
+    font-size: 18px;
+}
+
+/* input */
+textarea {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px;
+}
+
+/* кнопка */
+.btn {
+    font-size: 18px;
+    padding: 16px;
+}
+
+#increase, #decrease {
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    border-radius: 50%;
+}
+
+
+
+
+/* =========================
+   АНИМАЦИЯ ПОЯВЛЕНИЯ КАРТИНОК
+========================= */
+
+.gallery img,
+.first-image,
+.timer-wrapper,
+.rsvp-section {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+    transition:
+        opacity 3s ease,
+        transform 3s ease;
+}
+
+/* когда элемент появился */
+.gallery img.show,
+.first-image.show,
+.timer-wrapper.show,
+.rsvp-section.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+
